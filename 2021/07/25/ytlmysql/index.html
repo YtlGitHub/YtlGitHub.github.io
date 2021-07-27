@@ -483,28 +483,32 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="ytlmysql"><a href="#ytlmysql" class="headerlink" title="ytlmysql"></a>ytlmysql</h2><h3 id="一-连接MySQL服务-MySQL数据库-的指令-查询电脑ip命令-ipconfig"><a href="#一-连接MySQL服务-MySQL数据库-的指令-查询电脑ip命令-ipconfig" class="headerlink" title="一.连接MySQL服务(MySQL数据库)的指令,查询电脑ip命令(ipconfig)"></a>一.连接MySQL服务(MySQL数据库)的指令,查询电脑ip命令(ipconfig)</h3><p>mysql - h 主机IP -P 端口 -u 用户名 -p密码<br>提醒:<br>(1)-p密码不要有空格,<br>(2)-p后面没有输入密码,回车会要求输入密码<br>(3)如果没有写-h 主机ip,默认就是主机<br>(4)如果没有写-p 端口,默认就是3306<br>(5)在实际工作中,3306一般会修改<br>(6)登入之前确保MySQL服务是启动状态 net start mysql 启动服务 net stop mysql 停止服务</p>
-<h3 id="二-查看数据"><a href="#二-查看数据" class="headerlink" title="二.查看数据:"></a>二.查看数据:</h3><p>show databases<br>use mysql<br>show tables;<br>select * from user;  # 查询user表</p>
+                <h2 id="ytlmysql"><a href="#ytlmysql" class="headerlink" title="ytlmysql"></a>ytlmysql</h2><h3 id="一-连接MySQL服务-MySQL数据库-的指令-查询电脑ip命令-ipconfig"><a href="#一-连接MySQL服务-MySQL数据库-的指令-查询电脑ip命令-ipconfig" class="headerlink" title="一.连接MySQL服务(MySQL数据库)的指令,查询电脑ip命令(ipconfig)"></a>一.连接MySQL服务(MySQL数据库)的指令,查询电脑ip命令(ipconfig)</h3><p>mysql - h 主机IP -P 端口 -u 用户名 -p密码<br>提醒:<br>(1)-p密码不要有空格,<br>(2)-p后面没有输入密码,回车会要求输入密码<br>(3)如果没有写-h 主机ip,默认就是主机<br>(4)如果没有写-p 端口,默认就是3306<br>(5)在实际工作中,3306一般会修改<br>(6)登入之前确保MySQL服务是启动状态 net start mysql 启动服务 net stop mysql 停止服务</p>
+<h3 id="二-查看数据"><a href="#二-查看数据" class="headerlink" title="二.查看数据:"></a>二.查看数据:</h3><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">show databases
+use mysql
+show tables;
+select * from user;  # 查询user表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="三-创建数据库"><a href="#三-创建数据库" class="headerlink" title="三.创建数据库:"></a>三.创建数据库:</h3><p>create database db02;  # 创建db02数据库<br>use db02<br>create table users (id int, name varchar(255), address varchar(255));  # 创建表格<br>insert into users values(1,’tom’,’bj’);  # 插入数据<br>insert into users values(2,’jack’,’sh’);  # 插入数据<br>insert into users values(3,’shunping’,’gz’);  # 插入数据<br>select * from users;  # 查询users表格数据<br>指令创建表,格式如下:注意(字体变蓝说明是个关键字,我们应该加个反引号``这个引起来)</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">CREATE TABLE <span class="token variable"><span class="token variable">`</span>表名<span class="token variable">`</span></span><span class="token punctuation">(</span>
-指定列名1 指定列类型<span class="token punctuation">(</span>字段类型<span class="token punctuation">)</span>,
-<span class="token function">id</span> int,
-<span class="token variable"><span class="token variable">`</span>password<span class="token variable">`</span></span> VARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>,
-<span class="token variable"><span class="token variable">`</span>birthday<span class="token variable">`</span></span> DATE<span class="token punctuation">)</span>
-CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB<span class="token punctuation">;</span>
-character set:字符集,如不指定测为所在数据库字符集,<span class="token punctuation">]</span>.
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE TABLE `表名`(
+指定列名1 指定列类型(字段类型),
+id int,
+`password` VARCHAR(255),
+`birthday` DATE)
+CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB;
+character set:字符集,如不指定测为所在数据库字符集,].
 collate:校对规则,如不指定则为所在数据库校对规则.
 engine:存储引擎,涉及内容较多.
-<span class="token function">id</span>        整形<span class="token punctuation">(</span>int<span class="token punctuation">)</span>
-name      字符串<span class="token punctuation">(</span>varchar<span class="token punctuation">(</span><span class="token number">225</span><span class="token punctuation">))</span>
-password  字符串<span class="token punctuation">(</span>varchar<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">))</span>
-birthday  日期<span class="token punctuation">(</span>date<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">CREATE TABLE <span class="token variable"><span class="token variable">`</span>user02<span class="token variable">`</span></span><span class="token punctuation">(</span>
-	<span class="token function">id</span> INT,
-	<span class="token variable"><span class="token variable">`</span>name<span class="token variable">`</span></span> VARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>,
-	<span class="token variable"><span class="token variable">`</span>password<span class="token variable">`</span></span> VARCHAR<span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>,
-	<span class="token variable"><span class="token variable">`</span>birthday<span class="token variable">`</span></span> DATE<span class="token punctuation">)</span>
-	CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+id        整形(int)
+name      字符串(varchar(225))
+password  字符串(varchar(255))
+birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE TABLE `user02`(
+	id INT,
+	`name` VARCHAR(255),
+	`password` VARCHAR(255),
+	`birthday` DATE)
+	CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="四-备份恢复数据库或者表"><a href="#四-备份恢复数据库或者表" class="headerlink" title="四.备份恢复数据库或者表:"></a>四.备份恢复数据库或者表:</h3><p>(1)备份数据库(注意:在DOS执行,后面不带分号)<br>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; d:\path文件名.sql<br>(2)备份库的表:(注意:备份表不要-B)<br>mysqldump -u 用户名 -p密码 数据库名 表名1 表名2 表名n &gt; d:\path文件名.sql<br>(3)恢复数据库(注意:进入mysql里面在执行,先创建新的数据库名,在在这个库名下面备份数据)<br>create database 新库名;<br>use 新库名;<br>Source d:\path文件名.sql</p>
 <h3 id="五-删除数据库里面的表"><a href="#五-删除数据库里面的表" class="headerlink" title="五.删除数据库里面的表:"></a>五.删除数据库里面的表:</h3><p>drop table 表名:</p>
 <h3 id="六-删除数据库-注意-进入mysql在执行-慎重使用"><a href="#六-删除数据库-注意-进入mysql在执行-慎重使用" class="headerlink" title="六.删除数据库(注意:进入mysql在执行,慎重使用.)"></a>六.删除数据库(注意:进入mysql在执行,慎重使用.)</h3><p>drop database 库名;</p>
