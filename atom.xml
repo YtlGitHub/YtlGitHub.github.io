@@ -6,7 +6,7 @@
   <link href="https://ytlgithub.github.io/atom.xml" rel="self"/>
   
   <link href="https://ytlgithub.github.io/"/>
-  <updated>2021-07-27T11:45:37.596Z</updated>
+  <updated>2021-07-27T11:55:43.461Z</updated>
   <id>https://ytlgithub.github.io/</id>
   
   <author>
@@ -17,15 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Blog</title>
+    <title>部署个人博客</title>
     <link href="https://ytlgithub.github.io/2021/07/27/blog/"/>
     <id>https://ytlgithub.github.io/2021/07/27/blog/</id>
-    <published>2021-07-27T11:45:37.000Z</published>
-    <updated>2021-07-27T11:45:37.596Z</updated>
+    <published>2021-07-27T09:32:12.000Z</published>
+    <updated>2021-07-27T11:55:43.461Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;欢迎来到部署个人博客&lt;a href=&quot;https://ytlgithub.github.io/&quot;&gt;ytlBlog&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;部署个人博客&quot;&gt;&lt;a href=&quot;#部署个人博客&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
+    <category term="Blog" scheme="https://ytlgithub.github.io/categories/Blog/"/>
     
+    
+    <category term="Blog" scheme="https://ytlgithub.github.io/tags/Blog/"/>
     
   </entry>
   
