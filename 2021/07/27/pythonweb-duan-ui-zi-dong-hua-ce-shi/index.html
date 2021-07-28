@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="github, 您网站的关键字,支持多个值">
+    <meta name="keywords" content="pythonweb端UI自动化测试, 您网站的关键字,支持多个值">
     <meta name="description" content="网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>github | YtlBlog</title>
+    <title>pythonweb端UI自动化测试 | YtlBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -313,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">github</h1>
+                    <h1 class="description center-align post-title">pythonweb端UI自动化测试</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/github/">
-                                <span class="chip bg-color">github</span>
+                            <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">自动化测试</span>
                             </a>
                         
                     </div>
@@ -446,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/github/" class="post-category">
-                                github
+                            <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category">
+                                自动化测试
                             </a>
                         
                     </div>
@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-25
+                    2021-07-27
                 </div>
                 
 
@@ -483,8 +483,71 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p><img src="http://medias/ytlimg/woaini.jpg" alt="首页"></p>
+                <p>ytl用python做web端自动化测试</p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>1.安装<a target="_blank" rel="noopener" href="https://www.google.cn/chrome/">谷歌浏览器</a><br>2.安装对应的<a target="_blank" rel="noopener" href="http://chromedriver.storage.googleapis.com/index.html">谷歌驱动</a><br>解压后,将chromedriver.exe放置到python的Scripts目录下<br>3.安装selenium<br>一般python自带</p>
+<h2 id="开始编写代码"><a href="#开始编写代码" class="headerlink" title="开始编写代码"></a>开始编写代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver  <span class="token comment"># 从`selenium`导入`webdriver`网络驱动</span>
+<span class="token keyword">import</span> time  <span class="token comment"># 导入时间`time`</span>
 
+
+driver <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 打开浏览器</span>
+url <span class="token operator">=</span> driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>  <span class="token comment"># 输入网址</span>
+driver<span class="token punctuation">.</span>implictitly_wait<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>  <span class="token comment"># 设置隐性等待时间10秒，当然时间自己定义</span>
+driver<span class="token punctuation">.</span>set_window_size<span class="token punctuation">(</span>width<span class="token operator">=</span><span class="token punctuation">,</span>height<span class="token operator">=</span><span class="token punctuation">)</span>  <span class="token comment"># 设置窗口大小</span>
+title <span class="token operator">=</span> <span class="token keyword">print</span><span class="token punctuation">(</span>driver<span class="token punctuation">.</span>title<span class="token punctuation">)</span>  <span class="token comment"># 获取标题方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="定位元素方法"><a href="#定位元素方法" class="headerlink" title="定位元素方法"></a>定位元素方法</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token string">"W9004993"</span><span class="token punctuation">)</span> <span class="token comment">#输入账号</span>
+driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"passwordSso"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token string">"532689.Aasdf"</span><span class="token punctuation">)</span> <span class="token comment">#输入密码</span>
+driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">"subnitButton"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#点击登入</span>
+driver<span class="token punctuation">.</span>find_element_by_xpath<span class="token punctuation">(</span><span class="token string">'//[@id="layout-custom"]/div[2]/div[1]/div/a'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#点击退出</span>
+driver<span class="token punctuation">.</span>find_element_by_name<span class="token punctuation">(</span><span class="token string">"wd"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token string">"自动化"</span><span class="token punctuation">)</span> <span class="token comment">#通过name定位</span>
+driver<span class="token punctuation">.</span>find_element_by_class_name<span class="token punctuation">(</span><span class="token string">"s_ipt"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token string">"selenium"</span><span class="token punctuation">)</span> <span class="token comment">#通过class定位</span>
+driver<span class="token punctuation">.</span>find_element_by_tag_name<span class="token punctuation">(</span><span class="token string">"ifrane"</span><span class="token punctuation">)</span> <span class="token comment">#通过tag标签定位绝大多数重复，偶尔iframe可能唯一</span>
+driver<span class="token punctuation">.</span>find_element_by_link_text<span class="token punctuation">(</span><span class="token string">"hao123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#通过link_text链接文本定位</span>
+driver<span class="token punctuation">.</span>find_element_by_partial_link_text<span class="token punctuation">(</span><span class="token string">"hao123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">#通过partial_link_text部分链接文本定位</span>
+driver<span class="token punctuation">.</span>find_element_by_css_selector<span class="token punctuation">(</span><span class="token string">"#kw"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token string">"css定位"</span><span class="token punctuation">)</span> <span class="token comment">#通过css_selector css选择器定位</span>
+driver<span class="token punctuation">.</span>find_element_by_class_name<span class="token punctuation">(</span><span class="token string">"mnav"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">.</span>clear<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 清理内容</span>
+<span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 点击</span>
+<span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 输入内容</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="内联框架标签"><a href="#内联框架标签" class="headerlink" title="内联框架标签"></a>内联框架标签</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>switch_to_frame<span class="token punctuation">(</span><span class="token string">"oppoRtcAsIframe"</span><span class="token punctuation">)</span> <span class="token comment"># 要先切换到iframe 先定位到iframe元素默认以iframe的id或者name定位</span>
+<span class="token comment"># 如果该框架没有id或name，可以通过其他定位方式找到该框架在切到该框架，</span>
+<span class="token comment"># 如：</span>
+el <span class="token operator">=</span> driver<span class="token punctuation">.</span>find_element_by_xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="oppoRtcAsIframe"]'</span><span class="token punctuation">)</span>
+driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>frame<span class="token punctuation">(</span>el<span class="token punctuation">)</span>
+<span class="token comment"># 在定位它下面的元素，</span>
+<span class="token comment"># 内联框架完成相关操作之后可以用下方法跳出iframe</span>
+driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>parent_frame<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 跳出该框架</span>
+driver<span class="token punctuation">.</span>switch_to<span class="token punctuation">.</span>default_content<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 跳到最外层页面</span>
+driver<span class="token punctuation">.</span>switch_to_window<span class="token punctuation">(</span>i<span class="token punctuation">)</span> <span class="token comment"># 切换到新的窗口在进行其他操作</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="ui自动化框架unottest"><a href="#ui自动化框架unottest" class="headerlink" title="ui自动化框架unottest"></a>ui自动化框架<code>unottest</code></h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver
+<span class="token keyword">import</span> yaml
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> time
+
+configure_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token string">"configure.yml"</span><span class="token punctuation">)</span>  <span class="token comment"># 配置文件路径，后面直接调用这些配置就行</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>configure_path<span class="token punctuation">,</span><span class="token string">"r"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    data <span class="token operator">=</span> yaml<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment"># print(data["URL"])</span>
+
+
+<span class="token keyword">class</span> <span class="token class-name">YtlUi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>driver <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 定义驱动</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>maximize_window<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 窗口最大化</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>implicitly_wait<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>  <span class="token comment"># 设置隐性等待时间</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">"URL"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 输入网址</span>
+
+    <span class="token keyword">def</span> <span class="token function">longin</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element_by_link_text<span class="token punctuation">(</span><span class="token string">'Sign In'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 点击你好,请登入</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">'fm-login-id'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 输入账号</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">'fm-login-password'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>send_keys<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token string">'password'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 输入密码</span>
+        self<span class="token punctuation">.</span>driver<span class="token punctuation">.</span>find_element_by_id<span class="token punctuation">(</span><span class="token string">'fm-login-submit'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>click<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 点击登入</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"成功"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    uploads <span class="token operator">=</span> uploads<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    uploads<span class="token punctuation">.</span>print_info<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -510,7 +573,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://ytlgithub.github.io/2021/07/25/github/">https://ytlgithub.github.io/2021/07/25/github/</a>
+                    <a href="https://ytlgithub.github.io/2021/07/27/pythonweb-duan-ui-zi-dong-hua-ce-shi/">https://ytlgithub.github.io/2021/07/27/pythonweb-duan-ui-zi-dong-hua-ce-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,8 +611,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/github/">
-                                    <span class="chip bg-color">github</span>
+                                <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">自动化测试</span>
                                 </a>
                             
                         </div>
@@ -719,17 +782,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/25/wu-chong-zhuang-tai-ma/">
+                <a href="/2021/07/27/pythonweb-duan-ui-zi-dong-hua-ce-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="五种状态码">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="pythonweb端UI自动化测试">
                         
-                        <span class="card-title">五种状态码</span>
+                        <span class="card-title">pythonweb端UI自动化测试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -739,26 +803,27 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/web/" class="post-category">
-                                    web
+                            <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    自动化测试
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web/">
-                        <span class="chip bg-color">web</span>
+                    <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">自动化测试</span>
                     </a>
                     
                 </div>
@@ -772,13 +837,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/25/git/">
+                <a href="/2021/07/27/blog/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="git">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="部署个人博客">
                         
-                        <span class="card-title">git</span>
+                        <span class="card-title">部署个人博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -789,14 +854,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/git/" class="post-category">
-                                    git
+                            <a href="/categories/Blog/" class="post-category">
+                                    Blog
                                 </a>
                             
                             
@@ -806,8 +871,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Blog/">
+                        <span class="chip bg-color">Blog</span>
                     </a>
                     
                 </div>

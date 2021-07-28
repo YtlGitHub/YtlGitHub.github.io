@@ -6,7 +6,7 @@
   <link href="https://ytlgithub.github.io/atom.xml" rel="self"/>
   
   <link href="https://ytlgithub.github.io/"/>
-  <updated>2021-07-27T11:55:43.461Z</updated>
+  <updated>2021-07-28T03:37:46.086Z</updated>
   <id>https://ytlgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pythonweb端UI自动化测试</title>
+    <link href="https://ytlgithub.github.io/2021/07/27/pythonweb-duan-ui-zi-dong-hua-ce-shi/"/>
+    <id>https://ytlgithub.github.io/2021/07/27/pythonweb-duan-ui-zi-dong-hua-ce-shi/</id>
+    <published>2021-07-27T15:19:13.000Z</published>
+    <updated>2021-07-28T03:37:46.086Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ytl用python做web端自动化测试&lt;/p&gt;
+&lt;h2 id=&quot;安装环境&quot;&gt;&lt;a href=&quot;#安装环境&quot; class=&quot;headerlink&quot; title=&quot;安装环境&quot;&gt;&lt;/a&gt;安装环境&lt;/h2&gt;&lt;p&gt;1.安装&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="自动化测试" scheme="https://ytlgithub.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="自动化测试" scheme="https://ytlgithub.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>部署个人博客</title>
@@ -47,7 +73,7 @@
     <link href="https://ytlgithub.github.io/2021/07/27/hexo-theme-matery-zhu-ti-she-zhi/"/>
     <id>https://ytlgithub.github.io/2021/07/27/hexo-theme-matery-zhu-ti-she-zhi/</id>
     <published>2021-07-27T04:26:52.000Z</published>
-    <updated>2021-07-27T11:35:37.260Z</updated>
+    <updated>2021-07-27T12:03:50.295Z</updated>
     
     
       
@@ -97,14 +123,14 @@
     <link href="https://ytlgithub.github.io/2021/07/25/github/"/>
     <id>https://ytlgithub.github.io/2021/07/25/github/</id>
     <published>2021-07-25T14:52:15.000Z</published>
-    <updated>2021-07-27T04:43:43.936Z</updated>
+    <updated>2021-07-28T04:26:58.525Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://medias/ytlimg/woaini.jpg&quot;</summary>
         
       
     
