@@ -489,10 +489,10 @@ use mysql
 show tables;
 select * from user;  # 查询user表<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="三-创建数据库"><a href="#三-创建数据库" class="headerlink" title="三.创建数据库:"></a>三.创建数据库:</h3><p>create database db02;  # 创建db02数据库<br>use db02<br>create table users (id int, name varchar(255), address varchar(255));  # 创建表格<br>insert into users values(1,’tom’,’bj’);  # 插入数据<br>insert into users values(2,’jack’,’sh’);  # 插入数据<br>insert into users values(3,’shunping’,’gz’);  # 插入数据<br>select * from users;  # 查询users表格数据<br>指令创建表,格式如下:注意(字体变蓝说明是个关键字,我们应该加个反引号``这个引起来)</p>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE TABLE `表名`(
+<h3 id="三-创建数据库"><a href="#三-创建数据库" class="headerlink" title="三.创建数据库:"></a>三.创建数据库:</h3><p>create database db02;  # 创建db02数据库,并设置自增，设置id为主键<br>use db02<br>create table users (id int primary key auto_increment not null, name varchar(255), address varchar(255));  # 创建表格<br>insert into users values(1,’tom’,’bj’);  # 插入数据<br>insert into users values(2,’jack’,’sh’);  # 插入数据<br>insert into users values(3,’shunping’,’gz’);  # 插入数据<br>select * from users;  # 查询users表格数据<br>指令创建表,格式如下:注意(字体变蓝说明是个关键字,我们应该加个反引号``这个引起来)</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">CREATE TABLE `表名`(
 指定列名1 指定列类型(字段类型),
-id int,
+id int primary key auto_increment not null,
 `password` VARCHAR(255),
 `birthday` DATE)
 CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB;
@@ -503,12 +503,16 @@ id        整形(int)
 name      字符串(varchar(225))
 password  字符串(varchar(255))
 birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">CREATE TABLE `user02`(
-	id INT,
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">CREATE TABLE `user02`(
+	id INT primary key auto_increment not null,
 	`name` VARCHAR(255),
 	`password` VARCHAR(255),
 	`birthday` DATE)
 	CHARACTER SET utf8 COLLATE utf8_bin ENGINE INNODB;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>删除主键</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">ALTER TABLE `table_name` DROP PRIMARY KEY;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在已有得表里添加主键</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">ALTER TABLE `table_name` ADD PRIMARY KEY(id);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="四-备份恢复数据库或者表"><a href="#四-备份恢复数据库或者表" class="headerlink" title="四.备份恢复数据库或者表:"></a>四.备份恢复数据库或者表:</h3><p>(1)备份数据库(注意:在DOS执行,后面不带分号)<br>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; d:\path文件名.sql<br>(2)备份库的表:(注意:备份表不要-B)<br>mysqldump -u 用户名 -p密码 数据库名 表名1 表名2 表名n &gt; d:\path文件名.sql<br>(3)恢复数据库(注意:进入mysql里面在执行,先创建新的数据库名,在在这个库名下面备份数据)<br>create database 新库名;<br>use 新库名;<br>Source d:\path文件名.sql</p>
 <h3 id="五-删除数据库里面的表"><a href="#五-删除数据库里面的表" class="headerlink" title="五.删除数据库里面的表:"></a>五.删除数据库里面的表:</h3><p>drop table 表名:</p>

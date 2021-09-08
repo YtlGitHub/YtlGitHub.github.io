@@ -501,7 +501,7 @@ character_set_server=utf8
 <p>2.以管理员的身份打开cmd,并切换到 cd /d D:\ytlmysql\mysql-5.7.19-winx64\bin\ 目录下,执行如下命令</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysqld -install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如是新装的win10系统执行这个命令会报错，需另外安装<a target="_blank" rel="noopener" href="https://github.com/YtlGitHub/YtlMySQL/blob/main/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/%E5%AE%89%E8%A3%85mysql%E5%87%BA%E9%94%99%E6%97%B6%E5%AE%89%E8%A3%85%E5%90%8E%E7%BD%AE%E5%B8%A6dll/vcredist_x64.exe">vcredist_x64.exe</a>插件，在执行这个命令就成功了<br>3.初始化数据库</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysqld --initialize-insecure --user=mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysqld --initialize-insecure --user<span class="token operator">=</span>mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>4.启动数据库</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">net start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>5.停止数据库,这个先不关最后不用了在关</p>
@@ -509,39 +509,39 @@ character_set_server=utf8
 <h3 id="四-修改root密码"><a href="#四-修改root密码" class="headerlink" title="四.修改root密码"></a>四.修改root密码</h3><p>1.进入mysql管理终端:mysql -u root -p (当前root用户密码为空),不需要输入密码直接回车就可以进入mysql</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>2.修改root密码</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">use mysql;
-update user set authentication_string=password("ytl")where user="root" and Host="localhost";
-flush privileges;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">use mysql<span class="token punctuation">;</span>
+update user <span class="token builtin class-name">set</span> <span class="token assign-left variable">authentication_string</span><span class="token operator">=</span>password<span class="token punctuation">(</span><span class="token string">"ytl"</span><span class="token punctuation">)</span>where <span class="token assign-left variable">user</span><span class="token operator">=</span><span class="token string">"root"</span> and <span class="token assign-left variable">Host</span><span class="token operator">=</span><span class="token string">"localhost"</span><span class="token punctuation">;</span>
+flush privileges<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>上面语句就行修改root用户的密码为ytl<br>注意在后面需要带’;’分号,回车执行指令<br>在执行flush privileges;刷新权限<br>最后退出quit,注意这里只是退出终端,但是MySQL服务是还在运行的.<br>3.回到D:\ytlmysql\mysql-5.7.19-winx64\目录下打开my.ini文件注销里面的# skip-grant-tables,注意修改完之后记得要重新启动才能生效.<br>4.注销后再执行net stop mysql停止MySQL,在执行net start mysql启动MySQL服务<br>5.安装完成</p>
 <h3 id="五-进入本地mysql"><a href="#五-进入本地mysql" class="headerlink" title="五.进入本地mysql"></a>五.进入本地mysql</h3><p>现在重新进入MySQL,输入正确的用户和密码</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql -u root -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="六-修改权限让其他用户也可以连接你的mysql"><a href="#六-修改权限让其他用户也可以连接你的mysql" class="headerlink" title="六.修改权限让其他用户也可以连接你的mysql"></a>六.修改权限让其他用户也可以连接你的mysql</h3><h4 id="1-改表法"><a href="#1-改表法" class="headerlink" title="1.改表法"></a>1.改表法</h4><p>可能是你的帐号不允许从远程登陆，只能在localhost。这个时候只要在localhost的那台电脑，登入mysql后，更改 “mysql” 数据库里的 “user” 表里的 “host” 项，从”localhost”改称”%”</p>
 <pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">mysql -u root -p
-mysql&gt;use mysql;
-mysql&gt;update user set host = '%' where user = 'root';
-mysql&gt;select host, user from user;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+mysql<span class="token operator">&gt;</span>use mysql<span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span>update user <span class="token builtin class-name">set</span> <span class="token function">host</span> <span class="token operator">=</span> <span class="token string">'%'</span> where user <span class="token operator">=</span> <span class="token string">'root'</span><span class="token punctuation">;</span>
+mysql<span class="token operator">&gt;</span>select host, user from user<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-授权法"><a href="#2-授权法" class="headerlink" title="2.授权法"></a>2.授权法</h4><p>(1)例如，你想用户’ytluser’使用密码’ytl’从任何主机连接到mysql服务器的话。</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON *.* TO 'ytluser'@'%' IDENTIFIED BY 'ytl' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON *.* TO <span class="token string">'ytluser'</span>@<span class="token string">'%'</span> IDENTIFIED BY <span class="token string">'ytl'</span> WITH GRANT OPTION<span class="token punctuation">;</span>
+FLUSH PRIVILEGES<span class="token punctuation">;</span>
 如果是新版mysql授权用户时报错
 问题：当我们新装的mysql，输入创建用户的命令后，提示语法错误，报错如下：
-mysql&gt; grant all privileges on *.* to xma@'%' identified by 'myslag123!@#';
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'identified by 'myslag123!@#'' at line 1
+mysql<span class="token operator">&gt;</span> grant all privileges on *.* to xma@<span class="token string">'%'</span> identified by <span class="token string">'myslag123!@#'</span><span class="token punctuation">;</span>
+ERROR <span class="token number">1064</span> <span class="token punctuation">(</span><span class="token number">42000</span><span class="token punctuation">)</span>: You have an error <span class="token keyword">in</span> your SQL syntax<span class="token punctuation">;</span> check the manual that corresponds to your MySQL server version <span class="token keyword">for</span> the right syntax to use near <span class="token string">'identified by '</span>myslag123<span class="token operator">!</span>@<span class="token comment">#'' at line 1</span>
 原因：因为新版的的mysql版本已经将创建用户和赋予权限的操作分开了，我们可以分两步进行操作。
 解决办法
-1.创建用户
-create user 'ytluser'@'%' identified by 'ytl';
-2.赋予授权
-grant all privileges on *.* to 'ytl'@'%';&lt;br&gt;
-3.刷新权限
-FLUSH PRIVILEGES;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token number">1</span>.创建用户
+create user <span class="token string">'ytluser'</span>@<span class="token string">'%'</span> identified by <span class="token string">'ytl'</span><span class="token punctuation">;</span>
+<span class="token number">2</span>.赋予授权
+grant all privileges on *.* to <span class="token string">'ytl'</span>@<span class="token string">'%'</span><span class="token punctuation">;</span><span class="token operator">&lt;</span>br<span class="token operator">&gt;</span>
+<span class="token number">3</span>.刷新权限
+FLUSH PRIVILEGES<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>(2)如果你想允许用户ytluser从ip为10.127.56.177的主机连接到mysql服务器，并使用ytl作为密码</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON *.* TO 'ytluser'@'10.127.56.177' IDENTIFIED BY 'ytl' WITH GRANT OPTION;
-FLUSH PRIVILEGES;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON *.* TO <span class="token string">'ytluser'</span>@<span class="token string">'10.127.56.177'</span> IDENTIFIED BY <span class="token string">'ytl'</span> WITH GRANT OPTION<span class="token punctuation">;</span>
+FLUSH PRIVILEGES<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>(3)如果你想允许用户ytluser从ip为192.168.1.6的主机连接到mysql服务器的db(库名)数据库，并使用ytl作为密码</p>
-<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON db.* TO 'ytluser'@'192.168.1.3' IDENTIFIED BY 'ytl' WITH GRANT OPTION;
-FLUSH PRIVILEGES;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">GRANT ALL PRIVILEGES ON db.* TO <span class="token string">'ytluser'</span>@<span class="token string">'192.168.1.3'</span> IDENTIFIED BY <span class="token string">'ytl'</span> WITH GRANT OPTION<span class="token punctuation">;</span>
+FLUSH PRIVILEGES<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
                 
             </div>
