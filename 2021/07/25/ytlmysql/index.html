@@ -514,7 +514,7 @@ birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span><
 <p>在已有得表里添加主键</p>
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">ALTER TABLE `table_name` ADD PRIMARY KEY(id);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>添加自动递增AUTO_INCREMENT</p>
-<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table material add column `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '自增id' first;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name add column `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '自增id' first;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>删除字段</p>
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name drop column id;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
