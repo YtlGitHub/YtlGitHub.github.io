@@ -513,6 +513,10 @@ birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span><
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">ALTER TABLE `table_name` DROP PRIMARY KEY;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在已有得表里添加主键</p>
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">ALTER TABLE `table_name` ADD PRIMARY KEY(id);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>添加自动递增AUTO_INCREMENT</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table material add column `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '自增id' first;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>删除字段</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name drop column id;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="四-备份恢复数据库或者表"><a href="#四-备份恢复数据库或者表" class="headerlink" title="四.备份恢复数据库或者表:"></a>四.备份恢复数据库或者表:</h3><p>(1)备份数据库(注意:在DOS执行,后面不带分号)<br>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; d:\path文件名.sql<br>(2)备份库的表:(注意:备份表不要-B)<br>mysqldump -u 用户名 -p密码 数据库名 表名1 表名2 表名n &gt; d:\path文件名.sql<br>(3)恢复数据库(注意:进入mysql里面在执行,先创建新的数据库名,在在这个库名下面备份数据)<br>create database 新库名;<br>use 新库名;<br>Source d:\path文件名.sql</p>
 <h3 id="五-删除数据库里面的表"><a href="#五-删除数据库里面的表" class="headerlink" title="五.删除数据库里面的表:"></a>五.删除数据库里面的表:</h3><p>drop table 表名:</p>
