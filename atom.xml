@@ -6,7 +6,7 @@
   <link href="https://ytlgithub.github.io/atom.xml" rel="self"/>
   
   <link href="https://ytlgithub.github.io/"/>
-  <updated>2021-07-29T11:56:07.190Z</updated>
+  <updated>2021-09-08T10:16:06.507Z</updated>
   <id>https://ytlgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HtmlStudy</title>
+    <link href="https://ytlgithub.github.io/2021/09/08/htmlstudy/"/>
+    <id>https://ytlgithub.github.io/2021/09/08/htmlstudy/</id>
+    <published>2021-09-08T09:44:14.000Z</published>
+    <updated>2021-09-08T10:16:06.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;HTML标签&quot;&gt;&lt;a href=&quot;#HTML标签&quot; class=&quot;headerlink&quot; title=&quot;HTML标签&quot;&gt;&lt;/a&gt;HTML标签&lt;/h1&gt;&lt;h2 id=&quot;HTML格式&quot;&gt;&lt;a href=&quot;#HTML格式&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Html" scheme="https://ytlgithub.github.io/categories/Html/"/>
+    
+    
+    <category term="Html" scheme="https://ytlgithub.github.io/tags/Html/"/>
+    
+  </entry>
   
   <entry>
     <title>pythonweb端UI自动化测试</title>

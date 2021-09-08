@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, 您网站的关键字,支持多个值">
+    <meta name="keywords" content="分类: Html, 您网站的关键字,支持多个值">
     <meta name="description" content="网站描述">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签 | YtlBlog</title>
+    <title>分类: Html | YtlBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,136 +355,163 @@
 
     
 
-<div id="tags" class="container chip-container">
+<div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
             <div class="tag-chips">
                 
                 
-                <a href="/tags/Blog/" title="Blog: 2">
+                
+                <a href="/categories/Blog/" title="Blog: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Blog" style="background-color: #F9EBEA;">Blog
+                            style="background-color: #F9EBEA;">Blog
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/git/" title="git: 1">
+                <a href="/categories/git/" title="git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="git" style="background-color: #F5EEF8;">git
+                            style="background-color: #F5EEF8;">git
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Hello-World/" title="Hello World: 1">
+                <a href="/categories/github/" title="github: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hello World" style="background-color: #D5F5E3;">Hello World
+                            style="background-color: #D5F5E3;">github
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/github/" title="github: 1">
+                <a href="/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" title="自动化测试: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="github" style="background-color: #E8F8F5;">github
+                            style="background-color: #E8F8F5;">自动化测试
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" title="自动化测试: 1">
+                <a href="/categories/java/" title="java: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="自动化测试" style="background-color: #FEF9E7;">自动化测试
+                            style="background-color: #FEF9E7;">java
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/java/" title="java: 1">
+                <a href="/categories/MySQL/" title="MySQL: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="java" style="background-color: #F8F9F9;">java
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/MySQL/" title="MySQL: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="MySQL" style="background-color: #82E0AA;">MySQL
+                            style="background-color: #F8F9F9;">MySQL
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/python/" title="python: 1">
+                <a href="/categories/python/" title="python: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="python" style="background-color: #D7BDE2;">python
+                            style="background-color: #82E0AA;">python
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/web/" title="web: 1">
+                <a href="/categories/web/" title="web: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="web" style="background-color: #A3E4D7;">web
+                            style="background-color: #D7BDE2;">web
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Html/" title="Html: 1">
+                <a href="/categories/Html/" title="Html: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Html" style="background-color: #85C1E9;">Html
+                             chip-active "
+                            style="background-color: #A3E4D7;">Html
                         <span class="tag-length">1</span>
                     </span>
                 </a>
+                
                 
             </div>
         </div>
     </div>
 </div>
 
-    
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
-
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
-
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
-
-    $('#tag-wordcloud').jQCloud([{"text":"Blog","weight":2,"link":"/tags/Blog/"},{"text":"git","weight":1,"link":"/tags/git/"},{"text":"Hello World","weight":1,"link":"/tags/Hello-World/"},{"text":"github","weight":1,"link":"/tags/github/"},{"text":"自动化测试","weight":1,"link":"/tags/自动化测试/"},{"text":"java","weight":1,"link":"/tags/java/"},{"text":"MySQL","weight":2,"link":"/tags/MySQL/"},{"text":"python","weight":1,"link":"/tags/python/"},{"text":"web","weight":1,"link":"/tags/web/"},{"text":"Html","weight":1,"link":"/tags/Html/"}], {
-        autoResize: true
-    });
-</script>
 
     
 
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2021/09/08/htmlstudy/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="HtmlStudy">
+                            
+                            <span class="card-title">HtmlStudy</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                HTML标签HTML格式&lt;!DOCTYPE HTML&gt;
+&lt;html leng="zh-CN"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Html/" class="post-category">
+                                    Html
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Html/">
+                            <span class="chip bg-color">Html</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
