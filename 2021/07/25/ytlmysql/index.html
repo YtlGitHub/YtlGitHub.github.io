@@ -523,9 +523,19 @@ birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span><
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name modify `字段` varchar(25);  # 修改一个字段的类型
 alter table table_name change `字段` `字段新名` int;  # 修改一个字段的名称，此时一定要重新指定该字段的类型<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h3 id="四-备份恢复数据库或者表"><a href="#四-备份恢复数据库或者表" class="headerlink" title="四.备份恢复数据库或者表:"></a>四.备份恢复数据库或者表:</h3><p>(1)备份数据库(注意:在DOS执行,后面不带分号)<br>mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; d:\path文件名.sql<br>(2)备份库的表:(注意:备份表不要-B)<br>mysqldump -u 用户名 -p密码 数据库名 表名1 表名2 表名n &gt; d:\path文件名.sql<br>(3)恢复数据库(注意:进入mysql里面在执行,先创建新的数据库名,在在这个库名下面备份数据)<br>create database 新库名;<br>use 新库名;<br>Source d:\path文件名.sql</p>
-<h3 id="五-删除数据库里面的表"><a href="#五-删除数据库里面的表" class="headerlink" title="五.删除数据库里面的表:"></a>五.删除数据库里面的表:</h3><p>drop table 表名:</p>
-<h3 id="六-删除数据库-注意-进入mysql在执行-慎重使用"><a href="#六-删除数据库-注意-进入mysql在执行-慎重使用" class="headerlink" title="六.删除数据库(注意:进入mysql在执行,慎重使用.)"></a>六.删除数据库(注意:进入mysql在执行,慎重使用.)</h3><p>drop database 库名;</p>
+<h3 id="四-备份恢复数据库或者表"><a href="#四-备份恢复数据库或者表" class="headerlink" title="四.备份恢复数据库或者表:"></a>四.备份恢复数据库或者表:</h3><p>(1)备份数据库(注意:在DOS执行,后面不带分号)</p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">mysqldump -u 用户名 -p -B 数据库1 数据库2 数据库n &gt; d:\\path文件名.sql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(2)备份库的表:(注意:备份表不要-B)</p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">mysqldump -u 用户名 -p密码 数据库名 表名1 表名2 表名n &gt; d:\\path文件名.sql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>(3)恢复数据库(注意:进入mysql里面在执行,先创建新的数据库名,在在这个库名下面备份数据)</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">create database 新库名;
+use 新库名;
+Source d:\\path文件名.sql<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="五-删除数据库里面的表"><a href="#五-删除数据库里面的表" class="headerlink" title="五.删除数据库里面的表:"></a>五.删除数据库里面的表:</h3><pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">drop table 表名:<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="六-删除数据库-注意-进入mysql在执行-慎重使用"><a href="#六-删除数据库-注意-进入mysql在执行-慎重使用" class="headerlink" title="六.删除数据库(注意:进入mysql在执行,慎重使用.)"></a>六.删除数据库(注意:进入mysql在执行,慎重使用.)</h3><pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">drop database 库名;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <h3 id="七-数据库的增删改查"><a href="#七-数据库的增删改查" class="headerlink" title="七.数据库的增删改查"></a>七.数据库的增删改查</h3><h4 id="1-增"><a href="#1-增" class="headerlink" title="1.增"></a>1.增</h4><pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">1、向所有列插入数据--into关键字可以省略
 insert    into    表名  values（列值1，列值2，……）
 insert    into  studentinfo  values（‘004’，‘张鑫’，19，‘北京海淀’）
