@@ -6,7 +6,7 @@
   <link href="https://ytlgithub.github.io/atom.xml" rel="self"/>
   
   <link href="https://ytlgithub.github.io/"/>
-  <updated>2021-09-10T12:57:55.500Z</updated>
+  <updated>2021-09-13T10:42:40.378Z</updated>
   <id>https://ytlgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PyDjangoServer</title>
+    <link href="https://ytlgithub.github.io/2021/09/13/pydjangoserver/"/>
+    <id>https://ytlgithub.github.io/2021/09/13/pydjangoserver/</id>
+    <published>2021-09-13T10:27:15.000Z</published>
+    <updated>2021-09-13T10:42:40.378Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;这是一个使用python语言，Django框架编写的一个web服务&quot;&gt;&lt;a href=&quot;#这是一个使用python语言，Django框架编写的一个web服务&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="server" scheme="https://ytlgithub.github.io/categories/server/"/>
+    
+    
+    <category term="Django" scheme="https://ytlgithub.github.io/tags/Django/"/>
+    
+  </entry>
   
   <entry>
     <title>HtmlStudy</title>
