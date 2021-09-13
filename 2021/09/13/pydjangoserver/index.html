@@ -548,7 +548,52 @@ urlpatterns = [
     path('app02', views.app02, name='app02'),
 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在下面多加一个path路径’app02’表示网页地址路径，views.app02表示展示调用项目应用里面的函数，name=’app02’表示给该路径取个名字自己定义，可以用来反向获取URL</p>
-<h3 id="三、项目的模型"><a href="#三、项目的模型" class="headerlink" title="三、项目的模型"></a>三、项目的模型</h3><p>1、连接数据库<br>    在settings.py文件里面配置一下我们需要连接的数据库<br>    如：<br>        DATABASES = {<br>            ‘default’: {<br>                ‘ENGINE’: ‘django.db.backends.sqlite3’,<br>                ‘NAME’: BASE_DIR / ‘db.sqlite3’,<br>            }<br>        }<br>        把这个替换成<br>        DATABASES = {<br>            ‘default’: {<br>                ‘ENGINE’: ‘django.db.backends.mysql’,<br>                ‘NAME’: ‘mydemo’,<br>                ‘USER’: ‘root’,<br>                ‘PASSWORD’ ‘ytl’,<br>                ‘HOST’: ‘localhost’,<br>                ‘PORT’: ‘3306’,<br>            }<br>        }<br>2、下载mysqlclient，执行mysql需要用到，一个加载模块<br>    把之前的pymysql改成mysqlclient<br>3、在models.py文件里面创建数据类<br>    如：<br>        class Stu(models.Model):<br>            ‘’’自定义Stu表对应的Model类’’’<br>            # 定义属性：默认主键自增id字段可不写<br>            id = models.AutoField(primary_key=True)<br>            name = models.CharField(max_length=16)<br>            age = models.SmallIntegrField()<br>            sex = models.CharField(max_length=1)<br>            classid = models.CharField(max_length=8)<br>            # 定义默认输出格式<br>            def <strong>str</strong>(self):<br>                return “%d:%s:%d:%s:%s:”%(self.id,self.name,self.age,seek.sex,self.classid)<br>            # 自定义对应的表明，默认表名：myapp_stu<br>            class Meta:<br>                db_table=”stu”<br>4、在settings.p配置文件里面把myapp应用添加进去<br>    如：<br>        INSTALLED_APPS = [<br>            ‘django.contrib.admin’,<br>            ‘django.contrib.auth’,<br>            ‘django.contrib.contenttypes’,<br>            ‘django.contrib.sessions’,<br>            ‘django.contrib.messages’,<br>            ‘django.contrib.staticfiles’,<br>            ‘myapps’,<br>            ‘myapps’,<br>        ]</p>
+<h3 id="三、项目的模型"><a href="#三、项目的模型" class="headerlink" title="三、项目的模型"></a>三、项目的模型</h3><p>1、连接数据库<br>在settings.py文件里面配置一下我们需要连接的数据库<br>如：</p>
+<pre class="line-numbers language-settings.py" data-language="settings.py"><code class="language-settings.py">DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+把这个替换成
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydemo',
+        'USER': 'root',
+        'PASSWORD' 'ytl',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2、下载mysqlclient，执行mysql需要用到，一个加载模块</p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">pip install mysqlclient<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>把之前的pymysql改成mysqlclient<br>3、在models.py文件里面创建数据类<br>如：</p>
+<pre class="line-numbers language-models.py" data-language="models.py"><code class="language-models.py">class Stu(models.Model):
+    '''自定义Stu表对应的Model类'''
+    # 定义属性：默认主键自增id字段可不写
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=16)
+    age = models.SmallIntegrField()
+    sex = models.CharField(max_length=1)
+    classid = models.CharField(max_length=8)
+    # 定义默认输出格式
+    def __str__(self):
+        return "%d:%s:%d:%s:%s:"%(self.id,self.name,self.age,seek.sex,self.classid)
+    # 自定义对应的表明，默认表名：myapp_stu    
+    class Meta:
+        db_table="stu"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>4、在settings.p配置文件里面把myapp应用添加进去<br>如：</p>
+<pre class="line-numbers language-settings.py" data-language="settings.py"><code class="language-settings.py">INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'myapps',
+    'myapps',
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
