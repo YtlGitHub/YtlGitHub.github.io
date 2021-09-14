@@ -595,6 +595,69 @@ DATABASES = {
     'myapps',
 ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="四、启动网站admin管理"><a href="#四、启动网站admin管理" class="headerlink" title="四、启动网站admin管理"></a>四、启动网站admin管理</h3><p>先介绍一下在settings.py文件里面有添加自己的app</p>
+<pre class="line-numbers language-myweb/settings.py" data-language="myweb/settings.py"><code class="language-myweb/settings.py">INSTALLED_APPS = [
+    'django.contrib.admin', # 管理网站
+    'django.contrib.auth', # 认证系统
+    'django.contrib.contenttypes',  # 内容类型的框架
+    'django.contrib.sessions',  # 会话框架
+    'django.contrib.messages',  # 消息框架
+    'django.contrib.staticfiles',  # 管理静态文件的框架
+    'myapp',  # 自己增加的app
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>利用models.py文件生成数据库表之前，是需要手动创建数据库<br>create database mysite<br>创建完mysite库之后，我们在终端执行如下命令，他们的作用就是将models文件生成一个迁移文件<br>python manage.py makemigrations<br>迁移文件生成完毕，执行<br>python manage.py migrate<br>会将迁移文件的内容作用到数据库中，生成表或者修改字段熟悉</p>
+<h4 id="1、数据迁移：python-manage-py-migrate"><a href="#1、数据迁移：python-manage-py-migrate" class="headerlink" title="1、数据迁移：python manage.py migrate"></a>1、数据迁移：python manage.py migrate</h4><p>出现这个说明成功：</p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">Operations to perform:
+      Apply all migrations: admin, auth, contenttypes, sessions
+    Running migrations:
+      Applying contenttypes.0001_initial... OK
+      Applying auth.0001_initial... OK
+      Applying admin.0001_initial... OK
+      Applying admin.0002_logentry_remove_auto_add... OK
+      Applying admin.0003_logentry_add_action_flag_choices... OK
+      Applying contenttypes.0002_remove_content_type_name... OK
+      Applying auth.0002_alter_permission_name_max_length... OK
+      Applying auth.0003_alter_user_email_max_length... OK
+      Applying auth.0004_alter_user_username_opts... OK
+      Applying auth.0005_alter_user_last_login_null... OK
+      Applying auth.0006_require_contenttypes_0002... OK
+      Applying auth.0007_alter_validators_add_error_messages... OK
+      Applying auth.0008_alter_user_username_max_length... OK
+      Applying auth.0009_alter_user_last_name_max_length... OK
+      Applying auth.0010_alter_group_name_max_length... OK
+      Applying auth.0011_update_proxy_permissions... OK
+      Applying auth.0012_alter_user_first_name_max_length... OK
+      Applying sessions.0001_initial... OK<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2、创建超级用户：python-manage-py-createsuperuser"><a href="#2、创建超级用户：python-manage-py-createsuperuser" class="headerlink" title="2、创建超级用户：python manage.py createsuperuser"></a>2、创建超级用户：python manage.py createsuperuser</h4><pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">Username (leave blank to use 'administrator'): admin # 输入用户名
+	Email address: 1766842398@qq.com  # 邮箱
+	Password:  # 密码
+	Password (again): # 确认密码
+	The password is too similar to the username.
+	This password is too common.
+	Bypass password validation and create user anyway? [y/N]: y # 是否跳过密码验证并创建用户？选择是就行
+	Superuser created successfully. # 创建超级用户成功<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3、设置中文"><a href="#3、设置中文" class="headerlink" title="3、设置中文"></a>3、设置中文</h4><p>上面创建完成超级用户登录进去之后会发现都是英文，这里也可以设中文，在settings.py配置文件里面修改一下就行了。<br>如：</p>
+<pre class="line-numbers language-myweb/settings.py" data-language="myweb/settings.py"><code class="language-myweb/settings.py">LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在访问就成中文了</p>
+<h4 id="4、将我们自定义的应用程序加入到后台管理"><a href="#4、将我们自定义的应用程序加入到后台管理" class="headerlink" title="4、将我们自定义的应用程序加入到后台管理"></a>4、将我们自定义的应用程序加入到后台管理</h4><p>打开myapp/admin.py 文件，导入自己定义好的数据类，在添加到管理员里面</p>
+<pre class="line-numbers language-myapp/admin.py" data-language="myapp/admin.py"><code class="language-myapp/admin.py">from myapp.models import Stu
+admin.site.register(Stu)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="5、更深入设计后台管理"><a href="#5、更深入设计后台管理" class="headerlink" title="5、更深入设计后台管理"></a>5、更深入设计后台管理</h4><p>因为直接用的话后台管理不太美观所有我们自己设计一下<br>再次打开myapp/admin.py 文件，在添加自定义管理员界面<br>如：</p>
+<pre class="line-numbers language-myapp/admin.py" data-language="myapp/admin.py"><code class="language-myapp/admin.py">@admin.register(Stu)
+class StuAdmin(admin.ModelAdmin):
+    # listdisplay设置要显示在列表中的字段(id字段是Django模型的默认主键)
+    list_display = ('id', 'name', 'sex', 'age', 'classid')
+    # 设置哪些字段可以点击进入编辑界面
+    list_display_links = ('id', 'name')
+    # list_per_page设置每页显示多少条记录，默认是100条
+    list_per_page = 10
+    # ordering设置默认排序字段，负号表示降序排序
+    ordering = ('id',)  # -id降序
+    # list_editable 设置默认可编辑字段
+    # list_editable = ['age', 'sex', 'classid']<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
                 
             </div>
             <hr/>
