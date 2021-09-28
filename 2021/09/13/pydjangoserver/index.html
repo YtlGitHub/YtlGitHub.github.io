@@ -573,16 +573,18 @@ DATABASES = {
     '''自定义Stu表对应的Model类'''
     # 定义属性：默认主键自增id字段可不写
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=16)
-    age = models.SmallIntegrField()
-    sex = models.CharField(max_length=1)
-    classid = models.CharField(max_length=8)
+    name = models.CharField('姓名', max_length=16)
+    age = models.SmallIntegerField('年龄', )
+    sex = models.CharField('性别', max_length=1)
+    classid = models.CharField('班级', max_length=8, blank=True)  # blank=True 表示可以为空 默认不能为空
     # 定义默认输出格式
     def __str__(self):
         return "%d:%s:%d:%s:%s:"%(self.id,self.name,self.age,seek.sex,self.classid)
     # 自定义对应的表明，默认表名：myapp_stu    
     class Meta:
-        db_table="stu"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        db_table="stu"
+        verbose_name = '杨天龙样机表'  # 自定义表名
+        verbose_name_plural = '杨天龙样机管理'  # 自定义库名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>4、在settings.p配置文件里面把myapp应用添加进去<br>如：</p>
 <pre class="line-numbers language-settings.py" data-language="settings.py"><code class="language-settings.py">INSTALLED_APPS = [
     'django.contrib.admin',
