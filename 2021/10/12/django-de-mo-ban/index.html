@@ -519,10 +519,20 @@
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">{% csrf_token %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><p>语法：使用管道符“|”来应用过滤器<br>通过使用过滤器来改变变量的计算结果</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">{{ 变量|过滤器 }}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>例如:</p>
+<p>例如: 将变量name的值变为小写输出</p>
 <pre class="line-numbers language-none"><code class="language-none">{{ name|lower }}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>表示将变量name的值变小写输出</p>
-
+<p>关闭HTML自动转义</p>
+<pre class="line-numbers language-none"><code class="language-none">{{ data|safe }}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可以在if标签中使用过滤器结合运算符</p>
+<pre class="line-numbers language-none"><code class="language-none">if listl|length &gt; 1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>过滤器能够被“串联”，构成过滤器链</p>
+<pre class="line-numbers language-none"><code class="language-none">name|lower|upper<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>过滤器可以传递参数，参数使用引号包起来</p>
+<pre class="line-numbers language-none"><code class="language-none">list|join:", "<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>default: 如果一个变量没有被提供，或者值为false或空，则使用默认值，否则使用变量的值</p>
+<pre class="line-numbers language-none"><code class="language-none">value|default:"什么也没有"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>date: 根据给定格式对一个date变量格式化</p>
+<pre class="line-numbers language-none"><code class="language-none">value|date:'Y-m-d'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>
