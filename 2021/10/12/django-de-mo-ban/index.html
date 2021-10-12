@@ -528,11 +528,17 @@
 <p>过滤器能够被“串联”，构成过滤器链</p>
 <pre class="line-numbers language-none"><code class="language-none">name|lower|upper<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>过滤器可以传递参数，参数使用引号包起来</p>
-<pre class="line-numbers language-none"><code class="language-none">list|join:", "<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-none"><code class="language-none">list|join:":"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>default: 如果一个变量没有被提供，或者值为false或空，则使用默认值，否则使用变量的值</p>
 <pre class="line-numbers language-none"><code class="language-none">value|default:"什么也没有"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>date: 根据给定格式对一个date变量格式化,输出年月日时分秒，w：第几周</p>
 <pre class="line-numbers language-none"><code class="language-none">value|date:'Y-m-d H:i:s w'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行注释</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">{# 注释 #}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>多行注释</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">{% comment %}
+    多行注释
+{% endcomment %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
