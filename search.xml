@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Django的模板</title>
+      <link href="/2021/10/12/django-de-mo-ban/"/>
+      <url>/2021/10/12/django-de-mo-ban/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Django的模板介绍"><a href="#Django的模板介绍" class="headerlink" title="Django的模板介绍"></a>Django的模板介绍</h1><ul>    <li>作为Web框架，Django需要一种很便利的方法来动态生成HTML。常见做法是使用模板</li>    <li>模板包括所需HTML输出的静态部分，以及一些特殊的语法，描述如何将动态内容插入</li>    <li>模板输出就是输出数据，输出方法：直接输出，过滤输出、判断输出，循环输出</li></ul><h2 id="Django框架中如何使用模板："><a href="#Django框架中如何使用模板：" class="headerlink" title="Django框架中如何使用模板："></a>Django框架中如何使用模板：</h2><p>1.在项目的settings.py配置文件中配置模板目录</p><pre class="line-numbers language-settings.py" data-language="settings.py"><code class="language-settings.py">'DIRS': [os.path.join(BASE_DIR, "templates")],<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>2.在应用的视图文件加载模板，并放置要输出的数据</p><pre class="line-numbers language-views.py" data-language="views.py"><code class="language-views.py">return render(request,"目录/模板文件.html",{放置字典数据})<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>3.在模板文件中使用变量、标签何过滤器等输出信息</p><pre class="line-numbers language-html" data-language="html"><code class="language-html">{{ 变量 }} {% 标签 %} {{ 变量|过滤器 }}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> server </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PyDjangoServer</title>
       <link href="/2021/09/13/pydjangoserver/"/>
       <url>/2021/09/13/pydjangoserver/</url>
