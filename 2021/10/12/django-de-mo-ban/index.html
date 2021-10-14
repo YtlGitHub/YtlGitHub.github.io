@@ -551,9 +551,39 @@ note:等同于：(5/1)*100, 结果返回500
 widthratio需要三个参数，它会使用参数1/参数2*参数3的方式进行运算，进行乘法运算，使[参数2]=1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>除</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">{% widthratio 5 100 1 %}
-note:等同于：(5/100)*1，测结果返回0.05，和乘法一样是[参数3]=1就是除法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h2><p>模板继承可以减少页面内容的重复定义，实现页面内容的重用<br>典型应用：网站的头部、尾部是一样的，这些内容可以定义在父模板中，子模版不需要重复定义<br>block标签：在父模板中预留区域，在子模板中填充<br>extends继承：继承，写在模板文件的第一行</p>
+note:等同于：(5/100)*1，测结果返回0.05，和乘法一样是[参数3]=1就是除法 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="模板继承"><a href="#模板继承" class="headerlink" title="模板继承"></a>模板继承</h2><p>模板继承可以减少页面内容的重复定义，实现页面内容的重用<br>典型应用：网站的头部、尾部是一样的，这些内容可以定义在父模板中，子模版不需要重复定义<br>block标签：在父模板中预留区域，在子模板中填充<br>extends继承：继承，写在模板文件的第一行<br>定义父模块parent_template.html</p>
+<pre class="line-numbers language-parent_template.html" data-language="parent_template.html"><code class="language-parent_template.html">{% block block_name %}
+{% endblock %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>定义子模块sub_template.html</p>
+<pre class="line-numbers language-sub_template.html" data-language="sub_template.html"><code class="language-sub_template.html">{% extends 'base.html' %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在子模块中使用block填充预留区域<br>例：<br>父模板</p>
+<pre class="line-numbers language-parent_template.html" data-language="parent_template.html"><code class="language-parent_template.html">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-hans"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;{% block title1 %}父模板标题{% endblock %}&lt;/title&gt;
+	&lt;meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h2&gt;{% block title2 %}父模板标题{% endblock %}&lt;/h2&gt;
+	&lt;p&gt;
+		{% block mycontent %}
+			此处预留内容区域
+		{% endblock %}
+	&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>子模版继承父模板</p>
+<pre class="line-numbers language-sub_template.html" data-language="sub_template.html"><code class="language-sub_template.html">{% extends "myapp/inherit/parent_template.html"%}
 
+{% block title2 %}Django的模板继承实例{% endblock %}
+
+{% block mycontent %}
+    模板继承的应用场景&lt;br/&gt;
+    通常一个网站的某几个页面都有一些公共的布局，如导航栏、侧边栏和页脚的一些地方，如果将这些公共的部分抽离出来，放在一个单独的 html 页面中用于给其他页面继承，就称它为父版，而继承父版的页面就称为子版，同一个父版可以被多个子版继承。&lt;br/&gt;
+    子版中可以继承父版的内容和属性，这样可以使得页面更加简洁，而且在子版中可以修改母版中的部分内容。&lt;br/&gt;
+{% endblock %}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
