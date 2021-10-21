@@ -629,17 +629,18 @@ note:等同于：(5/100)*1，测结果返回0.05，和乘法一样是[参数3]=1
     return HttpResponse("上传的文件："+fileName)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="分页操作"><a href="#分页操作" class="headerlink" title="分页操作"></a>分页操作</h2><style>
 p{text-indent:2em;}
+span{color:red;}
 </style>
 <ul>
     <li>Django提供了一些实现管理数据分页，这些类位于django/core/paginator.py中</li>
-    <li color="red">Paginator对象
-        <p>Paginator(列表,int): 返回分页对象，参数为列表数据，每页数据的条数</p></li>
+    <li><span>Paginator对象</span>
+        <p><span>Paginator(列表,int)<span>: 返回分页对象，参数为列表数据，每页数据的条数</span></span></p></li>
     <li>属性
-        <p>count: 对象总数</p>
-        <p>num_pages: 页面总数</p>
-        <p>page_range: 页码列表，从1开始，例如[1,2,3,4]</p></li>
+        <p><sapn>count</sapn>: 对象总数</p>
+        <p><sapn>num_pages</sapn>: 页面总数</p>
+        <p><sapn>page_range</sapn>: 页码列表，从1开始，例如[1,2,3,4]</p></li>
     <li>方法
-        <p>page(num): 下标以1开始，如果提供的页面不存在，抛出InvalidPage异常</p></li>
+        <p><sapn>page(num)</sapn>: 下标以1开始，如果提供的页面不存在，抛出InvalidPage异常</p></li>
 </ul>
 
 
