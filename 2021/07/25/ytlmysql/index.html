@@ -517,6 +517,9 @@ birthday  日期(date)<span aria-hidden="true" class="line-numbers-rows"><span><
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name add column `id` bigint(20) NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT '自增id' first;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>增加两个字段</p>
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name add age int,add address varchar(11);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在指定的一个字段后面添加一个字段</p>
+<pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alert table 表名  add 新列名 类型 comment '添加备注' after  要跟随的字段名 (可写可不写)
+alter table user add sex int comment '性别' after nickname;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>删除字段</p>
 <pre class="line-numbers language-MySQL" data-language="MySQL"><code class="language-MySQL">alter table table_name drop column id;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>修改字段</p>
