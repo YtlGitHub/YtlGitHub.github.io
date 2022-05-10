@@ -6,7 +6,7 @@
   <link href="https://ytlgithub.github.io/atom.xml" rel="self"/>
   
   <link href="https://ytlgithub.github.io/"/>
-  <updated>2021-10-22T02:26:28.248Z</updated>
+  <updated>2022-05-10T10:48:15.210Z</updated>
   <id>https://ytlgithub.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python App</title>
+    <link href="https://ytlgithub.github.io/2022/05/10/pythonapp/"/>
+    <id>https://ytlgithub.github.io/2022/05/10/pythonapp/</id>
+    <published>2022-05-10T10:42:13.000Z</published>
+    <updated>2022-05-10T10:48:15.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;python编写app自动化脚本&lt;/p&gt;
+&lt;h2 id=&quot;安装环境&quot;&gt;&lt;a href=&quot;#安装环境&quot; class=&quot;headerlink&quot; title=&quot;安装环境&quot;&gt;&lt;/a&gt;安装环境&lt;/h2&gt;&lt;p&gt;python</summary>
+        
+      
+    
+    
+    
+    <category term="自动化测试" scheme="https://ytlgithub.github.io/categories/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="自动化测试" scheme="https://ytlgithub.github.io/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Django的模板</title>
