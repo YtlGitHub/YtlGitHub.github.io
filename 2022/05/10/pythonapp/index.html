@@ -515,7 +515,7 @@ class MyTestCase(unittest.TestCase):
   def tearDown(self):
     print("每条用例的后置条件")
 
-  # @rerun(count=2, interval=2)  # 装饰器测试用例运行失败重运行4，每次间隔2秒
+  # @rerun(count=2, interval=2)  # 装饰器测试用例运行失败重运行2，每次间隔2秒
   def test_something(self):
     """测试软件商店"""
     self.d(text="软件商店").click()
